@@ -1,0 +1,9 @@
+<h1>Create a New Quote</h1>
+
+<%= form_for @quote do |f| %>
+    <%=f.label :quote %>
+    <%=f.text_field :quote, class: 'form-control' %>
+    <%=f.label :author %>
+    <%=f.text_field :author, class: 'form-control' %>
+    <%=f.submit "Create New Precept" %>
+<% end %>
