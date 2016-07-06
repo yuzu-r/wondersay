@@ -1,0 +1,105 @@
+.clear {
+  clear:both;
+}
+
+.footer-blurb {
+    font-family: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
+    font-style: italic;
+    text-align: right;
+    font-size: 10px; 
+}
+
+.links {
+  padding-top: 26px;
+}
+
+.links a{
+  color: black;
+  font-size: 25px;
+  border-bottom: 1px solid #f84342;
+  font-family: 'alegreyaregular';
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.links a:hover{
+  background-color: #f84342;
+}
+
+#next-quote {
+  color: #f84342;
+  font-family: 'alegreyaregular';
+  font-size: 20px;
+  border-bottom: 1px solid #f84342;
+}
+
+#next-quote:hover{
+  color: black;
+  background-color: #f84342; 
+  text-decoration: none;
+}
+.about {
+    font-family: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
+}
+
+.modal {
+    font-family: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
+}
+
+.precept {
+  font-family: 'alegreyaregular';
+  font-size: 40px;
+}
+
+.precept-author {
+  font-family: 'alegreyaitalic';
+}
+
+.precept-book {
+  font-family: 'alegreyaregular';
+  font-size: 24px;
+
+}
+.jumbotron {
+  margin-top: 60px;
+}
+
+#precept-quote {
+  font-size: 40px;
+}
+
+::selection {
+  background-color: #f84342;
+}
+
+header {
+  border-top: 9px solid #222222;
+}
+
+hr {
+  clear:both;
+}
+
+h1 {
+  font-family: 'alegreyaregular';
+  font-size: 48px;
+}
+
+h2 {
+  font-family: 'alegreyaitalic';
+}
+
+h2 span {
+  font-family: 'alegreyaregular';
+  color: #f84342;
+}
+
+@media (max-width: 750px) {
+  @-ms-viewport {
+    width: device-width;
+    zoom: 1.0;
+  }
+  .footer-blurb {
+    text-align: left;
+  }
+}
