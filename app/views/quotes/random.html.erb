@@ -1,1 +1,29 @@
-random quote here
+
+
+<div class="jumbotron">
+  <h2> 
+    <span>
+      Precept # <%= @quote.id %>
+    </span>
+  </h2>
+  <h1 id='precept-quote' class="precept"> <%= @quote.quote %> </h1>
+  <h2 class="pull-right precept-author"> -- <%= @quote.author %> </h2>
+  <br class="clear" />
+  <br />
+  <br />
+  <button class="btn btn-primary">
+    <i class="fa fa-twitter-square fa-2x" style="vertical-align: middle;"></i> 
+    <span>&nbsp;Share!</span>
+  </button>
+</div>
+<div class="container">
+  <div class="col-xs-12 col-sm-6">
+    <a href=<%= root_path %> class='btn btn-default' role="button" id='next-quote'><i class="fa fa-refresh fa-2x" style="vertical-align: middle;"></i>&nbsp;Another Precept!</a>
+  
+
+  </div>
+</div>
+
+<div class="col-xs-12 col-sm-6 footer-blurb">
+  A collection of precepts from Mr. Browne's class.</a>. 
+</div>     

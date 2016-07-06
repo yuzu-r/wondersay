@@ -7,6 +7,7 @@ class QuotesController < ApplicationController
   end
 
   def random
+    @quote = Quote.order("RANDOM()").first
   end
 
   def create
@@ -14,7 +15,6 @@ class QuotesController < ApplicationController
     if @quote.invalid?
       render :new, status: :unprocessable_entity
     else
-      #render text: 'Successfully added!', status: :success
       redirect_to root_path
     end
   end
@@ -25,7 +25,7 @@ class QuotesController < ApplicationController
 
   private
     def quote_params
-      params.require(:quote).permit(:quote, :author)
+      params.require(:quote).permit(:quote, :author, :book)
     end
 
 end
