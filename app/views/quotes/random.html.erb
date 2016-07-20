@@ -27,3 +27,17 @@
 <div class="col-xs-12 col-sm-6 footer-blurb">
   A collection of precepts from Mr. Browne's class.</a>. 
 </div>     
+
+<script>
+  $(function() {
+    $.get("/api/v1/precepts/random").success(function(data) {
+      console.log(data);
+    });
+  });
+
+  $('.myB').on('click', function() {
+    $.getJSON("http://api.forismatic.com/api/1.0/?method=getQuote&format=jsonp&lang=en&jsonp=myJsonMethod&?callback=?");
+  });
+
+</script>
+

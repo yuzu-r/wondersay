@@ -2,6 +2,15 @@ Rails.application.routes.draw do
   devise_for :users
   resources :quotes, only: [:show, :create, :new]
   root 'quotes#random'
+  namespace :api do
+    namespace :v1 do
+      jsonapi_resources :precepts, only: [:index, :show] do
+        collection do
+          get :random
+        end
+      end
+    end
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
