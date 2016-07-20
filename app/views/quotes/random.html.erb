@@ -3,12 +3,20 @@
 <div class="jumbotron">
   <h2> 
     <span>
-      Precept # <%= @quote.id %>
+      <% if @quote %>
+        Precept # <%= @quote.id %>
+      <% else %>
+        Precept # 0
+      <% end %>
     </span>
   </h2>
-  <h1 id='precept-quote' class="precept"> <%= @quote.quote %> </h1>
-  <h2 class="pull-right precept-author"> -- <%= @quote.author %> </h2>
-  <br class="clear" />
+  <% if @quote %>
+    <h1 id='precept-quote' class="precept"> <%= @quote.quote %> </h1>
+    <h2 class="pull-right precept-author"> -- <%= @quote.author %> </h2>
+  <% else %>
+    <h1 class="precept">There are no quotes in the database. Create some!</h1>
+  <% end %>
+    <br class="clear" />
   <br />
   <br />
   <button class="btn btn-primary">
