@@ -3,7 +3,6 @@ class QuotesController < ApplicationController
 
   def show
     @quote = Quote.find_by_id(params[:id])
-    return render_not_found if @quote.blank?
   end
 
   def random
