@@ -38,7 +38,8 @@
 <script>
   $(document).ready(function(){
     $.ajax({
-      url: 'api/v1/precepts/random',
+      url: 'api/v1/precepts/random.json',
+      //url: 'http://wondersays.herokuapp.com/api/v1/precepts/random.json',
       dataType: 'jsonp',
       jsonp: 'callback',
       jsonpCallback: 'jsonpCallback',
