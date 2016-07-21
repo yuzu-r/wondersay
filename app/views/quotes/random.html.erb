@@ -36,11 +36,23 @@
 </div>     
 
 <script>
-  $(function() {
-    $.get("/api/v1/precepts/random").success(function(data) {
-      console.log(data);
+  $(document).ready(function(){
+    $.ajax({
+      url: 'api/v1/precepts/random',
+      dataType: 'jsonp',
+      jsonp: 'callback',
+      jsonpCallback: 'jsonpCallback',
+      success: function(){
+        console.log('success from jquery!');
+      }, 
+      error: function (data) {
+        console.log('Failed to get quote!');
+      }
     });
   });
-
+  function jsonpCallback(data){
+    console.log('in the callback');
+    console.log(data.quote);
+  }
 </script>
 
