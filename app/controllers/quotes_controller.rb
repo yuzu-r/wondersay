@@ -1,5 +1,5 @@
 class QuotesController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create, :update, :destroy, :index]
 
   def show
     @quote = Quote.find_by_id(params[:id])

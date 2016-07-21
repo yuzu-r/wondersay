@@ -25,15 +25,14 @@
   </button>
 </div>
 <div class="container">
-  <div class="col-xs-12 col-sm-6">
+  <div class="text-center">
     <a href=<%= root_path %> class='btn btn-default' role="button" id='next-quote'><i class="fa fa-refresh fa-2x" style="vertical-align: middle;"></i>&nbsp;Another Precept!</a>
-  
-
   </div>
 </div>
-
-<div class="col-xs-12 col-sm-6 footer-blurb">
-  A collection of precepts from Mr. Browne's class.</a>. 
+<br class="clear" />
+<br />
+<div class="footer-blurb">
+  more info 
 </div>     
 
 <script>
@@ -41,10 +40,6 @@
     $.get("/api/v1/precepts/random").success(function(data) {
       console.log(data);
     });
-  });
-
-  $('.myB').on('click', function() {
-    $.getJSON("http://api.forismatic.com/api/1.0/?method=getQuote&format=jsonp&lang=en&jsonp=myJsonMethod&?callback=?");
   });
 
 </script>
