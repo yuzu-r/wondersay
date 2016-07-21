@@ -8,8 +8,10 @@ module Api
       def random
         quote = Quote.order("RANDOM()").first
         if quote
-          render :json => {quote: quote.quote, author: quote.author, :callback => params[:callback]}
+          #render :json => {quote: quote.quote, author: quote.author, :callback => params[:callback]}
           # sometimes listed as params['callback']
+          response = params[:callback] + '(' + quote.to_json + ')'
+          render :text => response
         else
           render :json => {quote: "nothing here!", author: "nobody", :callback => params[:callback]}
         end
