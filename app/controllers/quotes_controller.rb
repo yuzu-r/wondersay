@@ -22,6 +22,10 @@ class QuotesController < ApplicationController
     @quote = Quote.new
   end
 
+  def index
+    @quotes = Quote.all
+  end
+
   private
     def quote_params
       params.require(:quote).permit(:quote, :author, :book)
