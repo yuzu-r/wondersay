@@ -1,0 +1,16 @@
+<div class="col-sm-offset-3 col-sm-6">
+  <h2>User Admin</h2><br/>
+</div>
+<div class="clear">
+
+<% @users.each do |user| %>
+  <%=user.email %>
+  <% if user.approved %>
+    <%= link_to "revoke access", '#' %>
+  <% else %>
+    <%= link_to "grant access", '#' %>
+  <% end %>
+  <%= link_to "remove", edit_user_registration_path(user), method: :delete %>
+  <br>
+<% end %>
+
