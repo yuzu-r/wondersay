@@ -5,6 +5,7 @@ FactoryGirl.define do
     end
     password "password"
     password_confirmation "password"
+    approved "true"
   end
 
   factory :quote do

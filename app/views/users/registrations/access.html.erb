@@ -1,0 +1,12 @@
+<h2>Edit Admin Access</h2>
+This page is only to grant or remove admin access to a user.
+Use the normal devise pages to change password or to self-remove your account.
+<br><br>
+<p><%= @user.email %>
+  <% if @user.approved %>
+    is currently allowed to log in and make changes. Click button to remove access.
+  <% else %>
+    is not currently allowed to log in or make changes. Click button to grant access.
+  <% end %>
+<%= link_to "Toggle Admin Access", get_user_access_path(@user), method: :patch, class: 'btn btn-primary pull-right' %>
+<p>

@@ -1,0 +1,11 @@
+Quote Index
+
+<%= link_to "new", new_quote_path %>
+
+<% @quotes.each do |q| %>
+  <%= q.quote %>
+  <%= q.author %>
+  <%= q.book %>
+  <%= link_to "edit", quote_path(q), method: :edit %>
+  <%= link_to "delete", quote_path(q), method: :destroy %>
+<% end %>
