@@ -1,6 +1,8 @@
 class Users::RegistrationsController < Devise::RegistrationsController
 # before_filter :configure_sign_up_params, only: [:create]
 # before_filter :configure_account_update_params, only: [:update]
+  before_action :authenticate_user!
+
   def index
     if params[:approved] == "false"
       @users = User.find_by_approved(false)
@@ -8,6 +10,25 @@ class Users::RegistrationsController < Devise::RegistrationsController
       @users = User.all
     end
   end
+
+  def access
+    if current_user
+      @user = User.find_by_id(params[:id])
+    else
+      render text: 'Not Allowed!', status: :forbidden
+    end
+  end
+
+  def access_update
+    if current_user
+      @user = User.find_by_id(params[:id])
+      @user.toggle_access
+      redirect_to users_admin_path
+    else
+      render text: 'Not Allowed!', status: :forbidden
+    end
+  end
+
   # GET /resource/sign_up
   # def new
   #   super

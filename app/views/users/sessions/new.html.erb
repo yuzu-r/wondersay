@@ -1,8 +1,16 @@
 <div class="col-sm-offset-3 col-sm-6">
-  <h2>Log in (user session, not devise session)</h2><br/>
+  <h2>Log in</h2><br/>
 </div>
 <div class="clear"></div>
 <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'form-horizontal'}) do |f| %>
+
+  <div class="col-sm-offset-3 col-sm-6">
+    <%= devise_error_messages! %>
+    <% flash.each do |key, value| %>
+       <div class="flash <%= key %>"><%= value %></div>
+    <% end %>
+  </div>
+  <div class="clear"></div>
   <div class="form-group">
     <%= f.label :email, class: "col-sm-3 control-label" %>
     <div class="col-sm-6">

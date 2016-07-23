@@ -15,4 +15,12 @@ class User < ActiveRecord::Base
       super # Use whatever other message 
     end 
   end
+
+  def toggle_access
+    if !approved?
+      self.update_attribute(:approved, true)
+    else
+      self.update_attribute(:approved, false)
+    end
+  end
 end

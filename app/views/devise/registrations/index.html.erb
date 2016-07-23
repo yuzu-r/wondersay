@@ -3,14 +3,20 @@
 </div>
 <div class="clear">
 
-<% @users.each do |user| %>
-  <%=user.email %>
-  <% if user.approved %>
-    <%= link_to "revoke access", '#' %>
-  <% else %>
-    <%= link_to "grant access", '#' %>
-  <% end %>
-  <%= link_to "remove", edit_user_registration_path(user), method: :delete %>
-  <br>
-<% end %>
+<div class="table-responsive">
+  <table class="table">
+    <% @users.each do |u| %>
+      <tr>
+        <td class="col-sm-8"><%=u.email %></td>
+        <% if u.approved %>
+          <td class="col-sm-2"><%= link_to "revoke admin access", get_user_access_path(u) %></td>
+        <% else %>
+          <td class="col-sm-2"><%= link_to "grant admin access", get_user_access_path(u) %></td>
+        <% end %>
+        <td class="col-sm-2"><%= link_to "remove account", '#' %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
 

@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   #get 'users/admin' => 'devise/registrations#index'
   devise_scope :user do
     get 'users/admin' => 'users/registrations#index'
+    get 'users/access/:id' => 'users/registrations#access', as: 'get_user_access'
+    patch 'users/access/:id' => 'users/registrations#access_update'
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
