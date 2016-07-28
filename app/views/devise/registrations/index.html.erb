@@ -2,9 +2,16 @@
   <h2>User Admin</h2><br/>
 </div>
 <div class="clear">
-
+<p> 
+  Users with admin access can create, edit or remove quotes. They also can revoke or grant access to other users. With great power comes great responsibility.
+</p>
+<p>
+  When a user is granted admin access, an email is automatically sent to let them know. Until they are granted access, their login will not work.
+</p>
+<br/>
 <div class="table-responsive">
   <table class="table">
+    <thead>User</thead>
     <% @users.each do |u| %>
       <tr>
         <td class="col-sm-8"><%=u.email %></td>
@@ -13,7 +20,6 @@
         <% else %>
           <td class="col-sm-2"><%= link_to "grant admin access", get_user_access_path(u) %></td>
         <% end %>
-        <td class="col-sm-2"><%= link_to "remove account", '#' %></td>
       </tr>
     <% end %>
   </table>

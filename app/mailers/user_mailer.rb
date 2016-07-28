@@ -13,7 +13,7 @@ class UserMailer < ApplicationMailer
 
   def new_user_waiting_for_approval(user)
     @greeting = "Hi"
-    admin_email = Rails.application.secrets.ADMIN_EMAIL
+    admin_email = ENV["ADMIN_EMAIL"]
     mail to: admin_email, subject: "Wondersays: new account requires approval"    
   end
 end
