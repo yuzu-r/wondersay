@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users
-  resources :quotes, only: [:show, :create, :new]
+  devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations' }
+  resources :quotes, only: [:show, :create, :new, :index, :destroy, :update]
   root 'quotes#random'
   namespace :api do
     namespace :v1 do
@@ -10,6 +10,12 @@ Rails.application.routes.draw do
         end
       end
     end
+  end
+  #get 'users/admin' => 'devise/registrations#index'
+  devise_scope :user do
+    get 'users/admin' => 'users/registrations#index'
+    get 'users/access/:id' => 'users/registrations#access', as: 'get_user_access'
+    patch 'users/access/:id' => 'users/registrations#access_update'
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

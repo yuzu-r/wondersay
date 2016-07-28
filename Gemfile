@@ -28,6 +28,8 @@ gem 'devise', '3.5.8'
 # for api
 gem 'jsonapi-resources'
 
+gem 'figaro'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
