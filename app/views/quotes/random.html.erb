@@ -19,20 +19,20 @@
     <br class="clear" />
   <br />
   <br />
-  <button class="btn btn-primary">
-    <i class="fa fa-twitter-square fa-2x" style="vertical-align: middle;"></i> 
-    <span>&nbsp;Share!</span>
-  </button>
-</div>
+  <a href="https://twitter.com/share" data-size="large" data-text="<%= @tweet_text%>" data-url="http://wondersays.herokuapp.com" data-hashtags="choosekind" data-show-count="false" class="twitter-share-button">
+  </a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>  
 <div class="container">
   <div class="text-center">
-    <a href=<%= root_path %> class='btn btn-default' role="button" id='next-quote'><i class="fa fa-refresh fa-2x" style="vertical-align: middle;"></i>&nbsp;Another Precept!</a>
+    <a href=<%= root_path %> class='btn btn-default' role="button" id='next-quote'><i class="fa fa-refresh fa-2x" style="vertical-align: middle;"></i>&nbsp;Show Another!</a>
   </div>
 </div>
 <br class="clear" />
 <br />
 <div class="footer-blurb">
-  more info 
+  <a href=<%= about_path %>>
+    The quotes shown here are gathered from Wonder, by R J Palacio.  
+  </a>
 </div>     
 
 <script>
@@ -45,7 +45,6 @@
       jsonp: 'callback',
       jsonpCallback: 'jsonpCallback',
       success: function(){
-        console.log('success from jquery!');
       }, 
       error: function (data) {
         console.log('Failed to get quote!');
@@ -53,7 +52,6 @@
     });
   });
   function jsonpCallback(data){
-    console.log('in the callback');
     console.log(data.quote);
   }
 </script>
