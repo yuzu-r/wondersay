@@ -4,12 +4,12 @@
 
 @font-face {
     font-family: 'alegreyaregular';
-    src: url('/assets/alegreya-regular-webfont.eot');
-    src: url('/assets/alegreya-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('/assets/alegreya-regular-webfont.woff2') format('woff2'),
-         url('/assets/alegreya-regular-webfont.woff') format('woff'),
-         url('/assets/alegreya-regular-webfont.ttf') format('truetype'),
-         url('/assets/alegreya-regular-webfont.svg#alegreyaregular') format('svg');
+    src: asset-url('alegreya-regular-webfont.eot');
+    src: asset-url('alegreya-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         asset-url('alegreya-regular-webfont.woff2') format('woff2'),
+         asset-url('alegreya-regular-webfont.woff') format('woff'),
+         asset-url('alegreya-regular-webfont.ttf') format('truetype'),
+         asset-url('alegreya-regular-webfont.svg#alegreyaregular') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -20,12 +20,12 @@
 
 @font-face {
     font-family: 'alegreyaitalic';
-    src: url('/assets/alegreya-italic-webfont.eot');
-    src: url('/assets/alegreya-italic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('/assets/alegreya-italic-webfont.woff2') format('woff2'),
-         url('/assets/alegreya-italic-webfont.woff') format('woff'),
-         url('/assets/alegreya-italic-webfont.ttf') format('truetype'),
-         url('/assets/alegreya-italic-webfont.svg#alegreyaitalic') format('svg');
+    src: asset-url('alegreya-italic-webfont.eot');
+    src: asset-url('alegreya-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         asset-url('alegreya-italic-webfont.woff2') format('woff2'),
+         asset-url('alegreya-italic-webfont.woff') format('woff'),
+         asset-url('alegreya-italic-webfont.ttf') format('truetype'),
+         asset-url('alegreya-italic-webfont.svg#alegreyaitalic') format('svg');
     font-weight: normal;
     font-style: normal;
 

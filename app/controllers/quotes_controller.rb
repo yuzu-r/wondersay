@@ -1,5 +1,6 @@
 class QuotesController < ApplicationController
   before_action :authenticate_user!, except: [:random, :show]
+  attr_accessor :tweet_text
 
   def show
     @quote = Quote.find_by_id(params[:id])
@@ -7,6 +8,7 @@ class QuotesController < ApplicationController
 
   def random
     @quote = Quote.order("RANDOM()").first
+    @tweet_text = @quote.quote + ' --' + @quote.author
   end
 
   def create
