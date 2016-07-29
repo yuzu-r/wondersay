@@ -1,11 +1,35 @@
-Quote Index
+<div class="col-sm-offset-3 col-sm-6">
+  <h2>Precept Index</h2><br/>
+</div>
+<div class="clear">
 
-<%= link_to "new", new_quote_path %>
+<%= link_to "New Precept", new_quote_path, class: 'btn btn-primary' %>
+<br/>
 
-<% @quotes.each do |q| %>
-  <%= q.quote %>
-  <%= q.author %>
-  <%= q.book %>
-  <%= link_to "edit", quote_path(q), method: :edit %>
-  <%= link_to "delete", quote_path(q), method: :destroy %>
-<% end %>
+<br/>
+<div class="table-responsive">
+  <table class="table">
+    <tr>
+      <th style="border-top-style:none">Precept</th>
+      <th style="border-top-style:none">Source</th>
+      <th style="border-top-style:none">Edit</th>
+      <th style="border-top-style:none">Delete</th>
+    </tr>
+    <% @quotes.each do |q| %>
+      <tr>
+        <td class="col-sm-6"><%=q.quote %></td>
+        <td class="col-sm-2"><%= q.author %></td>
+        <td class="col-sm-1">
+          <%= link_to edit_quote_path(q) do %>
+          <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+          <% end %>
+        </td>
+        <td class="col-sm-1">
+          <%= link_to quote_path(q), method: :delete do %>
+            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>

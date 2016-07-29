@@ -1,6 +1,7 @@
-<h1>Enter a New Precept</h1>
+<h1>Edit Precept</h1>
 
 <%= form_for @quote do |f| %>
+
   <% if @quote.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@quote.errors.count, "error") %> prohibited this precept from being saved:</h2>
@@ -16,8 +17,8 @@
   <%=f.text_field :quote, class: 'form-control' %>
   <%=f.label :author %>
   <%=f.text_field :author, class: 'form-control' %>
-  <%=f.submit "Create New Precept" %>
+  <br/>
+  <%=f.submit "Save" %>
 <% end %>
-
 <br/>
 <%= link_to 'Cancel', quotes_path %>
