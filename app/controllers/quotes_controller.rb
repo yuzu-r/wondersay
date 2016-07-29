@@ -1,5 +1,5 @@
 class QuotesController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :update, :destroy, :index]
+  before_action :authenticate_user!, except: [:random]
 
   def show
     @quote = Quote.find_by_id(params[:id])
@@ -14,7 +14,7 @@ class QuotesController < ApplicationController
     if @quote.invalid?
       render :new, status: :unprocessable_entity
     else
-      redirect_to root_path
+      redirect_to quotes_path, notice: 'Precept added!' 
     end
   end
 
@@ -24,6 +24,25 @@ class QuotesController < ApplicationController
 
   def index
     @quotes = Quote.all
+  end
+
+  def edit
+    @quote = Quote.find_by_id(params[:id])
+  end
+
+  def update
+    @quote = Quote.find_by_id(params[:id])
+    if @quote.update(quote_params)
+      redirect_to quotes_path, notice: 'Precept edited successfully!' 
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @quote = Quote.find_by_id(params[:id])
+    @quote.destroy
+    redirect_to quotes_path, notice: 'Precept deleted.' 
   end
 
   private

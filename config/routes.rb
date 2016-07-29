@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations' }
-  resources :quotes, only: [:show, :create, :new, :index, :destroy, :update]
+  resources :quotes
   root 'quotes#random'
   namespace :api do
     namespace :v1 do
