@@ -1,5 +1,5 @@
 class QuotesController < ApplicationController
-  before_action :authenticate_user!, except: [:random]
+  before_action :authenticate_user!, except: [:random, :show]
 
   def show
     @quote = Quote.find_by_id(params[:id])

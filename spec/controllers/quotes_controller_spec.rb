@@ -11,7 +11,7 @@ RSpec.describe QuotesController, type: :controller do
       u = FactoryGirl.create(:user)
       sign_in u
       post :create, quote: {quote: 'boosh', author: 'ethan'}
-      expect(response).to redirect_to root_path
+      expect(response).to redirect_to quotes_path
       q = Quote.last
       expect(q.quote).to eq 'boosh'
     end
