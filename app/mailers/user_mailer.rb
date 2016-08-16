@@ -16,4 +16,5 @@ class UserMailer < ApplicationMailer
     admin_email = ENV["ADMIN_EMAIL"]
     mail to: admin_email, subject: "Wondersays: new account requires approval"    
   end
+
 end

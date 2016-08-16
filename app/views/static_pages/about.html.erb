@@ -20,16 +20,44 @@ For more information, please see this project's <a href="https://github.com/yuzu
 <p class="about-ask">
 Want to see other projects?
 </p>
-<p class="about-ask" id="contact-me">
-</p> 
+<a id = "contact" style="text-decoration : none" class="about-ask" href='#' data-toggle="modal" data-target="#myModal" >
+  Questions or Feedback?
+</a>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Send a Message</h4>
+      </div>
+      <%= form_for @message, url: '#', :remote => true do |f| %>
+        <div class="modal-body">
+          <ul class="errors"></ul>
+          <%= f.label :name %>
+          <%= f.text_field :name, class: 'form-control' %>
+          <br/>
+          <%= f.label :email %>
+          <%= f.email_field :email, class: 'form-control' %>
+          <br/>
+          <%= f.label :content %>
+          <%= f.text_area :content, class: 'form-control' %>
+          <br/><br/>    
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <%=f.submit "Send Message", class: 'btn btn-primary', id: 'send-message' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
 
 <script>
-  $(document).ready(function(){
-    var email = "app53204121";
-    var emailDomain = "heroku.com";
-    var fullAddress = email + '@' + emailDomain;
-    var contact = "<a href='" + "mail" + "to:" + email + "@" + emailDomain + "'>" + "Questions or feedback?</a>";
-    $("#contact-me").html(contact);  
+// clear out the message modal in case there is data in there from previous send
+  $(".modal").on("hidden.bs.modal", function(){
+      $(".form-control").val("");
   });
-  
+
 </script>
