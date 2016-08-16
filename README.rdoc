@@ -5,9 +5,11 @@
 Rails web application which displays a random quote from Wonder, by RJ Palacio.
 Includes backend administration functions to add or edit additional quotes.
 
-The quote themselves are also available via API call which will return a quote in jsonp format. Sample:
-<tt>
-$(document).ready(function() {
+The quote themselves are also available via API call which will return a quote in jsonp format. 
+
+Sample:
+
+ $(document).ready(function() {
     $.ajax({
       url: 'http://wondersays.herokuapp.com/api/v1/precepts/random.json',
       type: 'GET',
@@ -21,10 +23,10 @@ $(document).ready(function() {
       }
     });
   
-});
+ });
 
-function jsonpCallback(data){
+ function jsonpCallback(data){
   $('.quote-text').text(data.quote);
   $('.quote-author').text(data.author);
-}
-</tt>
+ }
+
