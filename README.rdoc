@@ -1,28 +1,30 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+{<img src="https://codeship.com/projects/55c43b60-25bd-0134-e4a2-7285a150c536/status?branch=master" alt="Status?branch=master" />}[https://codeship.com/projects/161848]
 
-Things you may want to cover:
+Rails web application which displays a random quote from Wonder, by RJ Palacio.
+Includes backend administration functions to add or edit additional quotes.
 
-* Ruby version
+The quote themselves are also available via API call which will return a quote in jsonp format. Sample:
+<tt>
+$(document).ready(function() {
+    $.ajax({
+      url: 'http://wondersays.herokuapp.com/api/v1/precepts/random.json',
+      type: 'GET',
+      dataType: 'jsonp',
+      jsonp: 'callback',
+      jsonpCallback: 'jsonpCallback',
+      success: function(){
+      }, 
+      error: function (data) {
+        console.log('Failed to get quote!');
+      }
+    });
+  
+});
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+function jsonpCallback(data){
+  $('.quote-text').text(data.quote);
+  $('.quote-author').text(data.author);
+}
+</tt>
