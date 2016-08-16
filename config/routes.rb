@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :quotes
   root 'quotes#random'
   get 'about' => 'static_pages#about'
+  post 'about' => 'static_pages#create_message'
   namespace :api do
     namespace :v1 do
       jsonapi_resources :precepts, only: [:index, :show] do
